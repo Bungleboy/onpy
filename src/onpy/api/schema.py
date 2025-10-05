@@ -39,6 +39,10 @@ class NameIdFetchable(Protocol):
         """The ID of the item."""
         ...
 
+    def __hash__(self) -> int:
+        """Generate a unique hash for the object."""
+        return hash(self.id)
+
 
 class ApiModel(BaseModel):
     """Base model for OnShape APIs."""

@@ -15,7 +15,7 @@ from onpy.api import schema
 from onpy.api.versioning import WorkspaceWVM
 from onpy.elements.base import Element
 from onpy.entities.protocols import BodyEntityConvertible, FaceEntityConvertible
-from onpy.features import Extrude, Translate, BooleanUnion, Loft, OffsetPlane, Plane, Sketch
+from onpy.features import BooleanUnion, Extrude, Loft, OffsetPlane, Plane, Sketch, Translate
 from onpy.features.base import Feature, FeatureList
 from onpy.features.planes import DefaultPlane, DefaultPlaneOrientation
 from onpy.part import Part, PartList
@@ -156,8 +156,9 @@ class PartStudio(Element):
 
     def add_boolean_union(
         self,
-        parts: Part,
+        parts: list[Part],
         name: str = "New Boolean Union",
+        *,
         keep_tools: bool = False,
     ) -> BooleanUnion:
         """Add a new boolean of type union feature to the partstudio.

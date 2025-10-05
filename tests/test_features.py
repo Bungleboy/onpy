@@ -203,7 +203,7 @@ def test_part_boolean_union():
 
     first_part = extrude.get_created_parts()[0]
 
-    partstudio.add_translate(new_part, x=10, y=0, z=0, copy=True)
+    partstudio.add_translate(first_part, x=10, y=0, z=0, copy=True)
 
     second_part = partstudio.parts[-1]
 

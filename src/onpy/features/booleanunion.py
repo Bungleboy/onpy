@@ -11,7 +11,6 @@ from typing import TYPE_CHECKING, override
 from onpy.api import schema
 from onpy.api.schema import FeatureAddResponse
 from onpy.entities import EntityFilter
-from onpy.entities.protocols import BodyEntityConvertible, FaceEntityConvertible
 from onpy.features.base import Feature
 from onpy.part import Part
 from onpy.util.misc import unwrap
@@ -25,7 +24,7 @@ class BooleanUnion(Feature):
 
     def __init__(
         self,
-        parts: Part,
+        parts: list[Part],
         partstudio: "PartStudio",
         *,
         keep_tools: bool,
