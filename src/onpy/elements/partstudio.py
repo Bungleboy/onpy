@@ -145,13 +145,13 @@ class PartStudio(Element):
 
         """
         return Translate(
-            partstudio = self,
-            part = part,
-            name = name,
-            x = x,
-            y = y,
-            z = z,
-            copy = copy,
+            partstudio=self,
+            part=part,
+            name=name,
+            x=x,
+            y=y,
+            z=z,
+            copy=copy,
         )
 
     def add_boolean_union(
@@ -172,10 +172,10 @@ class PartStudio(Element):
 
         """
         return BooleanUnion(
-            partstudio = self,
-            parts = parts,
-            name = name,
-            keep_tools = keep_tools,
+            partstudio=self,
+            parts=parts,
+            name=name,
+            keep_tools=keep_tools,
         )
 
     def add_loft(

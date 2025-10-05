@@ -48,7 +48,6 @@ class BooleanUnion(Feature):
 
         self._upload_feature()
 
-
     @property
     @override
     def id(self) -> str | None:
@@ -72,7 +71,6 @@ class BooleanUnion(Feature):
 
     @override
     def _to_model(self) -> schema.Translate:
-
         part_ids = [p.id for p in self.parts]
 
         return schema.Translate(
@@ -81,24 +79,22 @@ class BooleanUnion(Feature):
             featureType="booleanBodies",
             suppressed=False,
             parameters=[
-
-
                 {
                     "btType": "BTMParameterEnum-145",
                     "enumName": "BooleanOperationType",
                     "value": "UNION",
-                    "parameterId": "operationType"
+                    "parameterId": "operationType",
                 },
                 {
                     "btType": "BTMParameterQueryList-148",
                     "parameterId": "tools",
-                    "queries": [
-                        {"btType": "BTMIndividualQuery-138", "deterministicIds": part_ids}
-                    ]
+                    "queries": [{"btType": "BTMIndividualQuery-138", "deterministicIds": part_ids}],
                 },
-                {"btType": "BTMParameterBoolean-144", "value": self.keep_tools, "parameterId": "keepTools"}
-
-
+                {
+                    "btType": "BTMParameterBoolean-144",
+                    "value": self.keep_tools,
+                    "parameterId": "keepTools",
+                },
             ],
         )
 
